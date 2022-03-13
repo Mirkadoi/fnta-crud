@@ -1,24 +1,36 @@
-# fnta-crud
+## Тестовый проект для улучшения практических навыков в разработке
 
-## Project setup
+### Инструкция по локальному запуску проекта
+Установить backend и frontend
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+Открыть новый терминал и запустить MongoDB:
+```
+mongo
+```
+Открыть новый терминал и запустить nodemon сервер:
+```
+nodemon
+```
+Можно проверить запущенный сервер по адресу http://localhost:4000/api
+
+Открыть новый терминал и запустить Vue приложение:
 ```
 npm run serve
 ```
+Можно проверить запущенное приложение по адресу http://localhost:8080
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### Дорожная карта развития
 
-### Lints and fixes files
-```
-npm run lint
-```
+- [ ] MEVN CRUD - MVP
+- [ ] Добавить линтер/pretter/hasky
+- [ ] Рефакторинг (конец этапа)
+- [ ] Дополнительно (добавить учителей)
+- [ ] Добавить тесты
+- [ ] Рефакторинг (конец этапа)
+- [ ] Добавить TypeScript
+- [ ] Рефакторинг (конец этапа)
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+

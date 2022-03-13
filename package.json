@@ -5,7 +5,10 @@
   "scripts": {
     "serve": "vue-cli-service serve ",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "major": "npm version major -m \"Фиксирует релизную версию - %s\"",
+    "minor": "npm version minor -m \"Фиксирует промежуточную версию - %s\"",
+    "patch": "npm version patch -m \"Фиксирует патч версию - %s\""
   },
   "dependencies": {
     "bootstrap": "~5.1.3",
