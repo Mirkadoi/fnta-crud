@@ -18,7 +18,7 @@
                     <td>
                         <router-link :to="{name: 'edit', params: { id: student._id }}" class="btn btn-success">Edit
                         </router-link>
-                        <button @click.prevent="deleteStudent(student._id)" class="btn btn-danger">Delete</button>
+                        <button class="btn btn-danger" @click.prevent="deleteStudent(student._id)">Delete</button>
                     </td>
                 </tr>
                 </tbody>
@@ -44,20 +44,20 @@
                     const response = await fetch(apiURL);
 
                     this.students = await response.json();
-                }catch (error) {
+                } catch (error) {
                     console.error(error)
                 }
             },
 
-            async deleteStudent(id){
+            async deleteStudent(id) {
                 let apiURL = `http://localhost:4000/api/delete-student/${id}`;
 
                 if (window.confirm("Do you really want to delete?")) {
 
                     try {
-                        await fetch(apiURL, { method: 'DELETE'});
+                        await fetch(apiURL, { method: 'DELETE' });
                         await this.getStudents()
-                    }catch (error) {
+                    } catch (error) {
                         console.error(error)
                     }
                 }

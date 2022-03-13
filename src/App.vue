@@ -2,13 +2,10 @@
   <div>
     <nav class="navbar navbar-dark bg-primary justify-content-between flex-nowrap flex-row">
       <div class="container">
-        <a class="navbar-brand float-left">MEVN Stack Example</a>
+        <a class="navbar-brand float-left">MEVN</a>
         <ul class="nav navbar-nav flex-row float-right">
-          <li class="nav-item">
-            <router-link class="nav-link pr-3" to="/">Create Student</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/view">View students</router-link>
+          <li v-for="item in NAV_ITEM" :key="item.name" class="nav-item mx-1">
+            <router-link class="nav-link" :to="item.to">{{item.name}}</router-link>
           </li>
         </ul>
       </div>
@@ -20,12 +17,19 @@
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-</style>
+<script>
+    export default {
+        created() {
+            this.NAV_ITEM = [
+                {
+                    name: 'Create Student',
+                    to: '/'
+                },
+                {
+                    name: 'View students',
+                    to: '/view'
+                }
+            ]
+        },
+    }
+</script>
