@@ -1,8 +1,8 @@
 <template>
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <h3 class="text-center">Update Student</h3>
-            <form @submit.prevent="handleUpdateForm">
+            <h3 class="text-center">{{ formOptions.headline }}</h3>
+            <form @submit.prevent="formOptions.submitEvent">
                 <div class="form-group">
                     <label>Name</label>
                     <input type="text" class="form-control" v-model="student.name" required>
@@ -16,7 +16,7 @@
                     <input type="text" class="form-control" v-model="student.phone" required>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-danger btn-block">Update</button>
+                    <button class="btn btn-danger btn-block">{{ formOptions.submitName }}</button>
                 </div>
             </form>
         </div>
@@ -26,11 +26,26 @@
     export default {
         data() {
             return {
-                student: { }
+                student: {
+                    name: '',
+                    email: '',
+                    phone: ''
+                }
+            }
+        },
+        computed: {
+            isEditMode() {
+                return !!this.$route.params.id
+            },
+            formOptions() {
+                const createOptions = {headline: 'Create Student', submitName: 'Create', submitEvent: this.handleCreateForm}
+                const updateOptions = {headline: 'Update Student', submitName: 'Update', submitEvent: this.handleUpdateForm}
+
+                return this.isEditMode ? updateOptions : createOptions
             }
         },
         created() {
-            this.getStudent();
+            if (this.isEditMode) this.getStudent();
         },
         methods: {
             async getStudent() {
@@ -40,6 +55,25 @@
                     const response = await fetch(apiURL);
 
                     this.student = await response.json();
+                }catch (error) {
+                    console.error(error)
+                }
+            },
+
+            async handleCreateForm() {
+                let apiURL = 'http://localhost:4000/api/create-student';
+
+                try {
+                    await fetch(apiURL, {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(this.student)
+                    });
+
+                    await this.$router.push('/')
                 }catch (error) {
                     console.error(error)
                 }
@@ -58,7 +92,7 @@
                         body: JSON.stringify(this.student)
                     });
 
-                    await this.$router.push('/view')
+                    await this.$router.push('/')
                 }catch (error) {
                     console.error(error)
                 }

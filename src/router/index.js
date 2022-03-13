@@ -7,15 +7,15 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import('../components/CreateComponent')
-  },
-  {
-    path: '/view',
-    name: 'view',
     component: () => import('../components/ListComponent')
   },
   {
-    path: '/edit/:id',
+    path: '/student',
+    name: 'create',
+    component: () => import('../components/EditComponent')
+  },
+  {
+    path: '/student/:id',
     name: 'edit',
     component: () => import('../components/EditComponent')
   }

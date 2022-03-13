@@ -23,11 +23,11 @@
             this.NAV_ITEM = [
                 {
                     name: 'Create Student',
-                    to: '/'
+                    to: '/student'
                 },
                 {
                     name: 'View students',
-                    to: '/view'
+                    to: '/'
                 }
             ]
         },
