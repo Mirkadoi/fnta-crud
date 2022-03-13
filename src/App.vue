@@ -8,7 +8,7 @@
             <router-link class="nav-link pr-3" to="/">Create Student</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/view">View Students</router-link>
+            <router-link class="nav-link" to="/view">View students</router-link>
           </li>
         </ul>
       </div>
