@@ -3,17 +3,9 @@
         <div class="col-md-6">
             <h3 class="text-center">{{ formOptions.headline }}</h3>
             <form @submit.prevent="formOptions.submitEvent">
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" class="form-control" v-model="student.name" required>
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" class="form-control" v-model="student.email" required>
-                </div>
-                <div class="form-group">
-                    <label>Phone</label>
-                    <input type="text" class="form-control" v-model="student.phone" required>
+                <div v-for="field in fields" :key="field.label" class="form-group mb-2">
+                    <label>{{ field.label | capitalize}}</label>
+                    <input v-model="student[field.label]" :type="field.type" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-danger btn-block">{{ formOptions.submitName }}</button>
@@ -30,7 +22,12 @@
                     name: '',
                     email: '',
                     phone: ''
-                }
+                },
+                fields: [
+                    { type: 'text', label: 'name'},
+                    { type: 'email', label: 'email'},
+                    { type: 'text', label: 'phone'},
+                ]
             }
         },
         computed: {
@@ -96,6 +93,11 @@
                 }catch (error) {
                     console.error(error)
                 }
+            }
+        },
+        filters: {
+            capitalize(value) {
+                return value.charAt(0).toUpperCase() + value.slice(1);
             }
         }
     }
