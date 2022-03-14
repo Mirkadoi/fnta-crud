@@ -1,32 +1,29 @@
 <template>
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <h3 class="text-center">Update Student</h3>
-            <form @submit.prevent="handleUpdateForm">
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" class="form-control" v-model="student.name" required>
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" class="form-control" v-model="student.email" required>
-                </div>
-                <div class="form-group">
-                    <label>Phone</label>
-                    <input type="text" class="form-control" v-model="student.phone" required>
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-danger btn-block">Update</button>
-                </div>
-            </form>
-        </div>
+        <form-person
+            :person="student"
+            action="update"
+            headline="Update Student"
+            @submit-form="handleSubmitForm"
+        />
     </div>
 </template>
+
 <script>
+    import FormPerson from '@/components/FormPerson';
+
     export default {
+        components: {
+            FormPerson,
+        },
+
         data() {
             return {
-                student: { }
+                student: {
+                    name: '',
+                    email: '',
+                    phone: ''
+                },
             }
         },
         created() {
@@ -40,12 +37,12 @@
                     const response = await fetch(apiURL);
 
                     this.student = await response.json();
-                }catch (error) {
+                } catch (error) {
                     console.error(error)
                 }
             },
 
-            async handleUpdateForm() {
+            async handleSubmitForm() {
                 let apiURL = `http://localhost:4000/api/update-student/${this.$route.params.id}`;
 
                 try {
@@ -58,8 +55,8 @@
                         body: JSON.stringify(this.student)
                     });
 
-                    await this.$router.push('/view')
-                }catch (error) {
+                    await this.$router.push('/')
+                } catch (error) {
                     console.error(error)
                 }
             }

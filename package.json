@@ -1,50 +1,21 @@
 {
   "name": "fnta-crud",
-  "version": "0.3.0",
-  "private": true,
+  "version": "0.4.0",
+  "description": "",
   "scripts": {
-    "serve": "vue-cli-service serve ",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "major": "npm version major -m \"Фиксирует релизную версию - %s\"",
-    "minor": "npm version minor -m \"Фиксирует промежуточную версию - %s\"",
-    "patch": "npm version patch -m \"Фиксирует патч версию - %s\""
+    "major": "npm version major --message \"Фиксирует релизную версию - %s\"",
+    "minor": "npm version minor --message \"Фиксирует промежуточную версию - %s\"",
+    "patch": "npm version patch --message \"Фиксирует патч версию - %s\""
   },
-  "dependencies": {
-    "bootstrap": "~5.1.3",
-    "core-js": "~3.21.1",
-    "vue": "~2.6.14",
-    "vue-router": "~3.5.3"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mirkadoi/fnta-crud.git"
   },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "~5.0.1",
-    "@vue/cli-plugin-eslint": "~5.0.1",
-    "@vue/cli-plugin-router": "~5.0.1",
-    "@vue/cli-service": "~5.0.1",
-    "@babel/eslint-parser": "^7.17.0",
-    "babel-eslint": "~10.1.0",
-    "eslint": "~8.11.0",
-    "eslint-plugin-vue": "~8.5.0",
-    "vue-template-compiler": "~2.6.14"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mirkadoi/fnta-crud/issues"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "@babel/eslint-parser",
-      "requireConfigFile": false
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+  "homepage": "https://github.com/Mirkadoi/fnta-crud#readme"
 }
