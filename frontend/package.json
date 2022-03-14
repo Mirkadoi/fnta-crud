@@ -1,14 +1,14 @@
 {
-  "name": "fnta-crud",
+  "name": "frontend-crud",
   "version": "0.3.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve ",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "major": "npm version major -m \"Фиксирует релизную версию - %s\"",
-    "minor": "npm version minor -m \"Фиксирует промежуточную версию - %s\"",
-    "patch": "npm version patch -m \"Фиксирует патч версию - %s\""
+    "major": "npm version major --message \"Фиксирует релизную версию - %s\"",
+    "minor": "npm version minor --message \"Фиксирует промежуточную версию - %s\"",
+    "patch": "npm version patch --message \"Фиксирует патч версию - %s\""
   },
   "dependencies": {
     "bootstrap": "~5.1.3",
