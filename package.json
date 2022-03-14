@@ -1,0 +1,21 @@
+{
+  "name": "fnta-crud",
+  "version": "0.3.0",
+  "description": "",
+  "scripts": {
+    "major": "npm version major --message \"Фиксирует релизную версию - %s\"",
+    "minor": "npm version minor --message \"Фиксирует промежуточную версию - %s\"",
+    "patch": "npm version patch --message \"Фиксирует патч версию - %s\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mirkadoi/fnta-crud.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mirkadoi/fnta-crud/issues"
+  },
+  "homepage": "https://github.com/Mirkadoi/fnta-crud#readme"
+}
