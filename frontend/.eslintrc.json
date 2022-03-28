@@ -1,0 +1,88 @@
+{
+  "root": true,
+  "env": {
+    "node": true
+  },
+  "extends": [
+    "plugin:vue/essential",
+    "eslint:recommended"
+  ],
+  "parserOptions": {
+    "parser": "@babel/eslint-parser",
+    "requireConfigFile": false
+  },
+  "rules": {
+    "vue/custom-event-name-casing": [
+      "error",
+      "camelCase"
+    ],
+    "vue/v-on-event-hyphenation": [
+      "error",
+      "never",
+      {
+        "autofix": false
+      }
+    ],
+    "vue/this-in-template": ["error", "never"],
+    "vue/new-line-between-multi-line-property": ["error", {
+      "minLineOfMultilineProperty": 2
+    }],
+    "vue/order-in-components": ["error", {
+      "order": [
+        "el",
+        "name",
+        "key",
+        "parent",
+        "functional",
+        ["delimiters", "comments"],
+        ["components", "directives"],
+        "extends",
+        "mixins",
+        ["provide", "inject"],
+        "ROUTER_GUARDS",
+        "layout",
+        "middleware",
+        "validate",
+        "scrollToTop",
+        "transition",
+        "loading",
+        "inheritAttrs",
+        "model",
+        ["props", "propsData"],
+        "emits",
+        "setup",
+        "asyncData",
+        "data",
+        "fetch",
+        "head",
+        "computed",
+        "LIFECYCLE_HOOKS",
+        "methods",
+        "filters",
+        "watch",
+        "watchQuery",
+        ["template", "render"],
+        "renderError"
+      ]
+    }],
+    "vue/attributes-order": ["error", {
+      "order": [
+        "DEFINITION",
+        "LIST_RENDERING",
+        "CONDITIONALS",
+        "TWO_WAY_BINDING",
+        "OTHER_DIRECTIVES",
+        "RENDER_MODIFIERS",
+        "GLOBAL",
+        ["UNIQUE", "SLOT"],
+        "OTHER_ATTR",
+        "EVENTS",
+        "CONTENT"
+      ],
+      "alphabetical": false
+    }],
+    "vue/valid-v-slot": ["error", {
+      "allowModifiers": true
+    }]
+  }
+}
