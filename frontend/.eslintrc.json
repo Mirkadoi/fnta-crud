@@ -3,20 +3,32 @@
   "env": {
     "node": true
   },
-  "extends": ["plugin:vue/essential", "eslint:recommended"],
+  "extends": ["plugin:vue/recommended", "eslint:recommended"],
   "parserOptions": {
     "parser": "@babel/eslint-parser",
     "requireConfigFile": false
   },
   "rules": {
-    "vue/custom-event-name-casing": ["error", "camelCase"],
+    "vue/custom-event-name-casing": ["error", "kebab-case"],
     "vue/v-on-event-hyphenation": [
       "error",
-      "never",
+      "always",
       {
         "autofix": false
       }
     ],
+    "vue/first-attribute-linebreak": ["error", {
+      "singleline": "beside",
+      "multiline": "below"
+    }],
+    "vue/max-attributes-per-line": ["error", {
+      "singleline": {
+        "max": 3
+      },
+      "multiline": {
+        "max": 1
+      }
+    }],
     "vue/this-in-template": ["error", "never"],
     "vue/new-line-between-multi-line-property": [
       "error",
